@@ -1,0 +1,19 @@
+{
+  "features": [
+    "len",
+    "has_ip",
+    "https",
+    "num_dots",
+    "num_hyphens",
+    "num_at",
+    "num_params",
+    "num_digits",
+    "num_special",
+    "has_keywords",
+    "subdomains",
+    "path_depth",
+    "host_entropy",
+    "digit_ratio"
+  ],
+  "model": "RandomForestClassifier"
+}

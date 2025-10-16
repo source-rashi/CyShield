@@ -1,0 +1,23 @@
+# Node
+node_modules/
+.env
+package-lock.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Models
+ml-service/models/model.joblib
+ml-service/models/*.joblib
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# VSCode
+.vscode/
