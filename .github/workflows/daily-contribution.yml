@@ -1,0 +1,29 @@
+name: Daily Contribution
+
+on:
+  schedule:
+    - cron: "30 18 * * *"   # runs daily (this equals 12:00 AM IST)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  contribute:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Make daily update
+        run: |
+          echo "Last update: $(date -u)" >> daily-log.txt
+
+      - name: Commit as Rashi
+        run: |
+          git config user.name "Rashi Agrawal"
+          git config user.email "rashiagrawal1801@gmail.com"
+          git add daily-log.txt
+          git commit -m "Daily update" || echo "No changes to commit"
+          git push
